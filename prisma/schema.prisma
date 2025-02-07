@@ -20,3 +20,21 @@ model User {
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 }
+
+model AirQuality {
+  id          Int     @id @default(autoincrement())
+  location    String
+  latitude    Float
+  longitude   Float
+  aqi         Int
+  pm25        Float?  // Optional fields
+  pm10        Float?  // Optional fields
+  no2         Float?  // Optional fields
+  so2         Float?  // Optional fields
+  co          Float?  // Optional fields
+  temperature Float?  // Optional fields
+  humidity    Float?  // Optional fields
+  windSpeed   Float?  // Optional fields
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}

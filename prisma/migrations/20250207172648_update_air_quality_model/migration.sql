@@ -1,0 +1,9 @@
+-- AlterTable
+ALTER TABLE `AirQuality` MODIFY `pm25` DOUBLE NULL,
+    MODIFY `pm10` DOUBLE NULL,
+    MODIFY `co` DOUBLE NULL,
+    MODIFY `so2` DOUBLE NULL,
+    MODIFY `no2` DOUBLE NULL,
+    MODIFY `temperature` DOUBLE NULL,
+    MODIFY `humidity` DOUBLE NULL,
+    MODIFY `windSpeed` DOUBLE NULL;

@@ -1,5 +1,6 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, Get, Req, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
+import { JwtAuthGuard } from '../utils/jwt-auth.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -13,5 +14,11 @@ export class AuthController {
   @Post('login')
   async login(@Body() data: { email: string; password: string }) {
     return this.authService.login(data);
+  }
+
+  @UseGuards(JwtAuthGuard) // Ensure user is authenticated
+  @Get('me')
+  getUser(@Req() req) {
+    return req.user; // User info comes from the token
   }
 }

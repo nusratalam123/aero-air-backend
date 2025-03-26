@@ -8,7 +8,10 @@ async function bootstrap() {
 
   // Enable CORS
   app.enableCors({
-    origin: 'http://localhost:3000', // Allow frontend URL
+    origin: [
+      'http://localhost:3000',  // For local development
+      'https://aero-aware-frontend.vercel.app',  // Your deployed frontend URL
+    ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: 'Content-Type, Authorization',
     credentials: true, // Allow cookies and credentials if needed
